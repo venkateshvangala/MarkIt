@@ -3,7 +3,7 @@ CREATE TABLE task (
   title varchar(60) NOT NULL,
   description varchar(150) DEFAULT NULL,
   status varchar(45) DEFAULT NULL,
-  create_ate timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  create_date timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   start_ate timestamp NULL DEFAULT NULL,
   end_date timestamp NULL DEFAULT NULL,
   created_by bigint(20) DEFAULT NULL,
