@@ -13,10 +13,11 @@ body {
 
 .row {
   width: 100%;
-  float: left; }
+  float: left;
+  margin: 0px !important; }
 
 .span_1, .span_2, .span_3, .span_4, .span_5, .span_6, .span_7, .span_8, .span_9, .span_10, .span_11, .span_12 {
-  margin: 1% 2% 0 0 !important; }
+  /*margin: 1% 2% 0 0 !important;*/ }
 
 .span_1.last, .span_2.last, .span_3.last, .span_4.last, .span_5.last, .span_6.last, .span_7.last, .span_8.last, .span_9.last, .span_10.last, .span_11.last, .span_12 {
   margin: 0; }

@@ -72,6 +72,97 @@ body{
 	}
 }
 
+.main-container{
+	.header{
+		height: 50px;
+		width: 100%;
+		background-color: #ffbb00;
+		color: #333;
+		
+		.header-bar{
+			height: 100%;
+			div.right-div, div.left-div{
+				height: 100%;
+			}
+		}
+	}
+}
+
+.refresh-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/refresh.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.add-task-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/add-task.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.list-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/list.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.list-view-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/list-view.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.notes-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/notes.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+.archive-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/archive.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+.trash-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/trash.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+
+
+.label-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/label.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+  float: left;
+}
+
+
 @media all and (max-width: 768px) {
 	.login-container{
 		@include setWidth(95%);
@@ -84,6 +175,139 @@ body{
 	}
 }
 
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    /*position: fixed;*/
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #EDEDE8;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+      color: #000;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: .6;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #333;
+    background: #ffbb00;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+.sidebar-toggle{
+	display: block;
+	position: fixed;
+}
+
+.active{
+	display: block;
+}
+
+ 
 
 
 

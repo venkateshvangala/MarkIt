@@ -1,5 +1,5 @@
 define(['jquery', 'underscore', 'backbone', 'js/views/common/viewCreate', "text!templates/index.html"], 
-	function($, _, Backbone, ViewCreate, mainTemplate){
+	function(jQuery, _, Backbone, ViewCreate, mainTemplate){
 	"use strict";
 
 	var AppView = Backbone.View.extend({
@@ -16,6 +16,11 @@ define(['jquery', 'underscore', 'backbone', 'js/views/common/viewCreate', "text!
 			require(["js/views/header/header"], function(HeaderView){
 				var headerView = ViewCreate.create(self, 'HeaderView', HeaderView);
 				headerView.render();
+			});
+			
+			require(['js/views/sidebar/sidebar'], function(SidebarView){
+				var sidebarView = ViewCreate.create(self, 'SidebarView', SidebarView);
+				sidebarView.render();
 			});
 			
 			require(['js/views/footer/footer'], function(FooterView){

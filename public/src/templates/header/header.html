@@ -1,3 +1,49 @@
-<div class="row">
-	Venkatesh Header at Top side
+<div class="row header-bar">
+	<div class="span_6 left-div pull-left">
+		<span class="span_1 list-icon"></span>
+	</div>
+	
+	<div class="span_6 right-div pull-left" style="width:52%">
+		<span class="span_1 list-view-icon pull-right" title="List View"></span>	
+		<span class="span_1 refresh-icon pull-right" title="Refresh"></span>
+		<span class="span_1 add-task-icon pull-right" title="Add Task" data-toggle="modal" data-target="#myModal"></span>
+	</div>
+	
+	
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Task</h4>
+      </div>
+      <div class="modal-body">
+         <div class="row">
+         	 <div class="span_6 pull-left">
+         	 	<label>Title</label>
+         	 	<label>Description</label>
+         	 	<label>Start Date</label>
+         	 	<label>End Date </label>
+         	 	<label>Status</label>
+         	 </div>
+         	 <div class="span_6 pull-left">
+         	 	<label>Title</label>
+         	 	<label>Description</label>
+         	 	<label>Start Date</label>
+         	 	<label>End Date </label>
+         	 	<label>Status</label>
+         	 </div>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Done</button>
+      </div>
+    </div>
+  </div>
 </div>
+	
+	
+</div>
+

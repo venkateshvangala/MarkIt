@@ -1,4 +1,4 @@
-define([ 'jquery', 'underscore', 'backbone'], function($, _, Backbone){
+define([ 'jquery', 'underscore', 'backbone'], function(jQuery, _, Backbone){
   var views = {};
   
   var create = function (context, name, View, options) {

@@ -12,9 +12,6 @@ import javax.security.sasl.AuthenticationException
  */
 
 object LabelService extends GenericService(classOf[Label]) {
-  def add(label: Label): Unit = {
-    save(label);
-  }
 
   def update(label: Label): Unit = {
     update(label);

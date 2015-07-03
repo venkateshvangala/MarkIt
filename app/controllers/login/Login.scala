@@ -34,7 +34,10 @@ object Login extends Controller {
   def authenticate = Action { implicit request => 
     val result = loginForm.bindFromRequest.fold(
       formWithErrors => { BadRequest(login(formWithErrors)) },
-      success => { Logger.info("Success") }
+      success => { 
+        Session.+(success._1);
+        Logger.info("Success...." + success + "...") 
+      }
     )
     Ok(main.render());
   }
