@@ -28,8 +28,6 @@ create table mi_user (
 
 SET FOREIGN_KEY_CHECKS=0;
 
-drop table mi_user;
-
 SET FOREIGN_KEY_CHECKS=1;
 
 
@@ -37,4 +35,6 @@ SET FOREIGN_KEY_CHECKS=1;
 
 
 insert into mi_user(user_id, display_name, email, password, mobile, first_name, last_name, gender, age, role, last_updated, updated_by, created_by, date_created) values(1, "Venkatesh Kumar V", "venkatesh.vangala@imaginea.com", "pramati123", "9030750193", "Venkatesh", "Kumar", "Male", 25, "user", "2014-04-29 09:45:34", "Venkatesh Kumar", "Venkatesh Kumar", "2014-04-29 09:45:34");
+
+commit;
 
