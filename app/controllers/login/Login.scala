@@ -32,14 +32,14 @@ object Login extends Controller {
   }
   
   def authenticate = Action { implicit request => 
+    var emailId: String = "";
     val result = loginForm.bindFromRequest.fold(
       formWithErrors => { BadRequest(login(formWithErrors)) },
-      success => { 
-        Session.+(success._1);
-        Logger.info("Success...." + success + "...") 
-      }
-    )
-    Ok(main.render());
+      success => {
+        emailId = success._1;
+        Logger.info("Success...." + success + "...")
+      })
+    Ok(main.render()).withSession("email" -> emailId);
   }
   
 }
