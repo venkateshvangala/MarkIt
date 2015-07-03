@@ -14,14 +14,23 @@ class LabelMap {
   @Id
   @GeneratedValue
   @Column(name = "map_id")
-  val mapId: Integer = 0;
+  val _mapId: Integer = 0;
 
   @Column(name = "label_id")
-  val labelId: Integer = null;
+  var _labelId: Integer = null;
 
   @Column(name = "task_id")
-  val taskId: String = null;
+  var _taskId: Integer = null;
 
   @Column(name = "user_id")
-  val userId: Long = 0;
+  var _userId: Long = 0;
+  
+  def labelId = _labelId;
+  def labelId_=(value: Integer): Unit = _labelId = value
+  
+  def taskId = _taskId;
+  def taskId_=(value: Integer): Unit = _taskId = value
+  
+  def userId_ = _userId;
+  def userId_=(value: Long): Unit = _userId = value
 }
