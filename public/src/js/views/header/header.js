@@ -11,7 +11,9 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html', "chos
 		
 		events : {
 			"click .list-icon": "toggleSidebar",
-			"click .add-task": "addTask" 
+			"click .add-task": "addTask",
+			"click .refresh-icon" : "render",
+			"click .list-view-icon" : "listView"
 		},
 		
 		render : function(){
@@ -23,6 +25,12 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html', "chos
 		toggleSidebar: function(){
 			var self = this;
 			$(self.el).find(".left-navigator").toggleClass("sidebar-toggle");
+		},
+		
+		listView: function(){
+			var self = this;
+			alert("list")
+			self.render();
 		},
 		
 		addTask: function(){

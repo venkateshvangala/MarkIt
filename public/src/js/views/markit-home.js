@@ -1,5 +1,5 @@
-define(['jquery', 'underscore', 'backbone', "text!templates/markit-home.html"], 
-function(jQuery, _, Backbone, markitHome){
+define(['jquery', 'underscore', 'backbone', 'js/model/list-tasks', "text!templates/markit-home.html"], 
+function(jQuery, _, Backbone, ListTaskModel, markitHome){
 	'use-strict';
 	var MarkItHomeView = Backbone.View.extend({
 		
@@ -7,6 +7,7 @@ function(jQuery, _, Backbone, markitHome){
 		
 		initialize : function(options){
 			self = this;
+			self.taskList = [];
 			console.log("Common to all view for extending all views")
 		},
 		
@@ -16,7 +17,26 @@ function(jQuery, _, Backbone, markitHome){
 		
 		render : function(){
 			var self = this;
-			$(self.el).html(_.template(markitHome, {}));
+			$.ajax({
+				url: "/listTask",
+				type: "GET",
+				success: function(responseData){
+					var collection = responseData.split("|");
+					self.parseJson(collection);
+					$(self.el).html(_.template(markitHome, {}));
+				}
+			});
+		},
+		
+		parseJson: function(collection){
+			for(var k = 0; k < collection.length - 1; k++){
+				var response = collection[k];
+				response = response.replace(/\\/g, '');
+				response = response.replace(/''/g, "'");
+				response = response.replace(/""/g, "'");
+				response = response.replace(/'/g, '"');
+				self.taskList.push(JSON.parse(response));
+			}
 		},
 		
 		toggleContainer: function(){

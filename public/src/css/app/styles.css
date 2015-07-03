@@ -235,7 +235,7 @@ body {
   position: fixed; }
 
 .active {
-  display: block; }
+  background-color: #d8b34d; }
 
 .modal-body input[type="text"] {
   height: 35px; }

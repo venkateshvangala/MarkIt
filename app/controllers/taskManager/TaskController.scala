@@ -9,14 +9,12 @@ import play.api.data._
 import play.api.data.Forms._
 import play.api.libs.json.JsObject
 import play.api.libs.json.JsString
-import play.api.libs.json.Json
-import models.data.Task
-import models.services.TaskService
-import play.api.libs.json.JsValue
-import play.api.libs.json.{JsNull,Json,JsString,JsValue}
-import play.api.libs.json.Writes
-import play.api.libs.json.JsPath
+import models.services._
+import models.data._
 import play.api.libs.json.JsArray
+import play.api.libs.json.Json
+import play.api.libs.json.JsValue
+ 
 
 
 
@@ -40,47 +38,24 @@ object TaskController extends Controller{
   
   
   
-  def listTask() = Action{
+  def listTask = Action{ 
       val taskList: List[Task] = TaskService.all();
-//      val arra = new JSONArray(taskList);
 
       
-      var newArray = new JsArray
       
-       
+       var test = "";
       
       for (task <- taskList){
           val json = Json.obj(
-          "name" -> task.title,
-          "location" -> task._description,
-          "residents" -> task.taskId
+          "title" -> task.title,
+          "descrition" -> task._description,
+          "taskId" -> task.taskId.toString()
         );
-        newArray.+:(json)
+        test += json + "|";
       }
-//      
-      var json1: JsValue = Json.obj(
-      "residents" -> newArray
-    )
       
-      
-//      val json: JsValue = Json.obj(
-//      "residents" -> Json.arr(
-//        Json.obj(
-//          "name" -> "Fiver",
-//          "age" -> 4,
-//          "role" -> JsNull
-//        ),
-//        Json.obj(
-//          "name" -> "Bigwig",
-//          "age" -> 6,
-//          "role" -> "Owsla"
-//        )
-//      )
-//    )
-//      
-      
-//      Ok(JsObject(List( "success"->JsString("success"), "error"->JsString("false"))));
-        Ok(json1);
+      Ok(test);
+    
       
   }
   
