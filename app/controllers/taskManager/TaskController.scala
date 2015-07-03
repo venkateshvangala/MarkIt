@@ -9,11 +9,17 @@ import play.api.data._
 import play.api.data.Forms._
 import play.api.libs.json.JsObject
 import play.api.libs.json.JsString
-import play.libs.Json
+import play.api.libs.json.Json
 import models.data.Task
-import java.util.Date
-import java.sql.Timestamp
 import models.services.TaskService
+import play.api.libs.json.JsValue
+import play.api.libs.json.{JsNull,Json,JsString,JsValue}
+import play.api.libs.json.Writes
+import play.api.libs.json.JsPath
+import play.api.libs.json.JsArray
+
+
+
 
 
 /**
@@ -26,13 +32,56 @@ object TaskController extends Controller{
       val task = new Task();
       task.title_=(requestBody.get.\("title")+"");
       task.description_=(requestBody.get.\("description")+"")
-//      task.createDate_=(new Timestamp(new Date().getTime));
-      task.startDate_=(new Timestamp(new Date(requestBody.get.\("startDate")+"").getTime));
-      task.endDate_= (new Timestamp(new Date(requestBody.get.\("endDate")+"").getTime))
       TaskService.save(task);
-      
-//      Ok(JsObject(List( "one"->JsString("venkis"), "two"->JsString("test"))));
-      
-      Ok("success");
+      Ok(JsObject(List( "success"->JsString("success"), "error"->JsString("false"))));
   }
+  
+ 
+  
+  
+  
+  def listTask() = Action{
+      val taskList: List[Task] = TaskService.all();
+//      val arra = new JSONArray(taskList);
+
+      
+      var newArray = new JsArray
+      
+       
+      
+      for (task <- taskList){
+          val json = Json.obj(
+          "name" -> task.title,
+          "location" -> task._description,
+          "residents" -> task.taskId
+        );
+        newArray.+:(json)
+      }
+//      
+      var json1: JsValue = Json.obj(
+      "residents" -> newArray
+    )
+      
+      
+//      val json: JsValue = Json.obj(
+//      "residents" -> Json.arr(
+//        Json.obj(
+//          "name" -> "Fiver",
+//          "age" -> 4,
+//          "role" -> JsNull
+//        ),
+//        Json.obj(
+//          "name" -> "Bigwig",
+//          "age" -> 6,
+//          "role" -> "Owsla"
+//        )
+//      )
+//    )
+//      
+      
+//      Ok(JsObject(List( "success"->JsString("success"), "error"->JsString("false"))));
+        Ok(json1);
+      
+  }
+  
 }

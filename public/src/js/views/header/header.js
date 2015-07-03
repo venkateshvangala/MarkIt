@@ -26,16 +26,18 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html', "chos
 		},
 		
 		addTask: function(){
+			var self = this;
 			var taskModel = new AddTaskModel();
 			taskModel.set({
-				"title": "MArk It",
-				"description" : "description",
-				"startDate": new Date(),
-				"endDate": new Date()
+				"title": $("input[name='title']").val().trim(),
+				"description" : $("input[name='description']").val().trim(),
+				"startDate": $("input[name='startDate']").val().trim(),
+				"endDate": $("input[name='endDate']").val().trim()
 			});
+			$(self.el).find("#myModal").modal("hide");
 			taskModel.save({
-				  success: function(model, response){
-				    console.log('success');
+				  success: function(){
+				    console('success');
 				  },
 				  error: function(){
 				    console.log('error');
