@@ -1,0 +1,90 @@
+body{
+	background-image: url('/assets/src/img/app/bg-image.jpg');
+}
+
+@mixin setWidth($width) {
+  width : $width;
+}
+
+@mixin setPadding($paddingTop, $paddingRight, $paddingBotton, $paddingLeft) {
+  padding-top: $paddingTop;
+  padding-right: $paddingRight;
+  padding-bottom: $paddingBotton;
+  padding-left: $paddingLeft;
+}
+
+@mixin setMargin($marginTop, $marginRight, $marginBotton, $marginLeft) {
+  margin-top: $marginTop;
+  margin-right: $marginRight;
+  margin-bottom: $marginBotton;
+  margin-left: $marginLeft;
+}
+
+@mixin setBorderRadius($radius) {
+  border-radius : $radius;
+}
+
+@mixin setBackGround($background){
+	background: $background;
+}
+
+@mixin setFloat($float){
+	float: $float;
+}
+
+
+.login-container{
+	@include setWidth(40%);
+	@include setBorderRadius(5px);
+	@include setPadding(10px, 10px, 10px, 10px);
+	@include setMargin(auto, auto, auto, auto);
+	@include setBackGround(#fff);
+	@include setFloat(none);
+
+	.header{
+		border-bottom: 1px solid #ccc;
+		@include setPadding(0px, 0px, 10px, 0px);
+		
+		img{
+			@include setBackGround(#EC0011);
+			@include setWidth(50%);
+			@include setBorderRadius(2px);
+			@include setFloat(right);
+		}
+	}
+	
+	h3{
+		@include setPadding(15px, 0px, 0px, 15px);
+		@include setMargin(0, 0, 0, 0);
+	}
+
+	label{
+		@include setPadding(0px, 0px, 0px, 0.8em);
+	}
+
+	input{
+		@include setMargin(auto, auto, auto, auto);
+	}
+
+	.btn-container{
+		border-top: 1px solid #ccc;
+		@include setPadding(1em, 0px, 0px, 0px);
+	}
+}
+
+@media all and (max-width: 768px) {
+	.login-container{
+		@include setWidth(95%);
+		
+		.header{
+		 	.span_6{
+		 		width : 45%;
+		 	}
+		}
+	}
+}
+
+
+
+
+

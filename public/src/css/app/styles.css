@@ -1,0 +1,60 @@
+body {
+  background-image: url("/assets/src/img/app/bg-image.jpg"); }
+
+.login-container {
+  width: 40%;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  background: #fff;
+  float: none; }
+  .login-container .header {
+    border-bottom: 1px solid #ccc;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-left: 0px; }
+    .login-container .header img {
+      background: #EC0011;
+      width: 50%;
+      border-radius: 2px;
+      float: right; }
+  .login-container h3 {
+    padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0; }
+  .login-container label {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0.8em; }
+  .login-container input {
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto; }
+  .login-container .btn-container {
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px; }
+
+@media all and (max-width: 768px) {
+  .login-container {
+    width: 95%; }
+    .login-container .header .span_6 {
+      width: 45%; } }
+
+/*# sourceMappingURL=styles.css.map */
