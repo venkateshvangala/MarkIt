@@ -7,32 +7,30 @@ import org.apache.shiro.authc.UsernamePasswordToken
 import org.apache.shiro.SecurityUtils
 import javax.security.sasl.AuthenticationException
 
-
 /**
  * @author venkateshv
  */
 
-object UserService extends GenericService(classOf[User]){
-     
-      def update(user: User): Unit = {
-          Ebean.update(user);
-      }
-      
-      def findByEmail(email: String): User = {
-          finder.where().eq("email", email).findUnique();
-      }
-      
-      def authenticate(email: String, password: String): Boolean = {
-          Logger.info("Logged in User...." + email);
-          val token = new UsernamePasswordToken(email, password);
-          token.setRememberMe(false);
-          val currentUser = SecurityUtils.getSubject;
-          try{
-            currentUser.login(token);
-            true;
-          }
-          catch {
-            case e: AuthenticationException => false;
-          }
-      }
+object UserService extends GenericService(classOf[User]) {
+
+  def update(user: User): Unit = {
+    Ebean.update(user);
+  }
+
+  def findByEmail(email: String): User = {
+    finder.where().eq("email", email).findUnique();
+  }
+
+  def authenticate(email: String, password: String): Boolean = {
+    Logger.info("Logged in User...." + email);
+    val token = new UsernamePasswordToken(email, password);
+    token.setRememberMe(false);
+    val currentUser = SecurityUtils.getSubject;
+    try {
+      currentUser.login(token);
+      true;
+    } catch {
+      case e: AuthenticationException => false;
+    }
+  }
 }
