@@ -9,12 +9,12 @@ import java.sql.Timestamp
 
 @Entity
 @Table(name = "label_master")
-class User {
+class Label {
 
   @Id
   @GeneratedValue
   @Column(name = "label_id")
-  val labelId: Long = 0;
+  val labelId: Integer = 0;
 
   @Column(name = "name")
   val name: String = null;
@@ -23,5 +23,5 @@ class User {
   val description: String = null;
 
   @Column(name = "owner_id")
-  val ownerId: Long = null;
+  val ownerId: Long = 0;
 }

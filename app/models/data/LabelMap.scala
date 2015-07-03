@@ -9,19 +9,19 @@ import java.sql.Timestamp
 
 @Entity
 @Table(name = "label_map")
-class User {
+class LabelMap {
 
   @Id
   @GeneratedValue
   @Column(name = "map_id")
-  val mapId: int = 0;
+  val mapId: Integer = 0;
 
   @Column(name = "label_id")
-  val labelId: int = null;
+  val labelId: Integer = null;
 
   @Column(name = "task_id")
   val taskId: String = null;
 
   @Column(name = "user_id")
-  val userId: Long = null;
+  val userId: Long = 0;
 }
