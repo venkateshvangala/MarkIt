@@ -19,8 +19,8 @@ class GenericService[T](beanClass: Class[T]) {
     Ebean.find(beanClass, id);
   }
 
-  def save(): Unit = {
-    Ebean.save(beanClass);
+  def save(model: Any): Unit = {
+    Ebean.save(model);
   }
 
   def update(): Unit = {

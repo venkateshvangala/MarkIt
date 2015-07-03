@@ -14,10 +14,10 @@ class Task {
   @Id
   @GeneratedValue
   @Column(name = "task_id")
-  var _taskId: Int;
+  val _taskId: Int = 0;
 
   @Column(name = "title")
-  var _title: String;
+  var _title: String = null;
 
   @Column(name = "description")
   var _description: String = null;
@@ -40,7 +40,6 @@ class Task {
   
   
   def taskId = _taskId; 
-  def taskId_= (value:Int):Unit =  _taskId = value
   
   def title = _title;
   def title_= (value:String):Unit =  _title = value
