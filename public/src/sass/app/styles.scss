@@ -37,7 +37,7 @@ body{
 	@include setWidth(40%);
 	@include setBorderRadius(5px);
 	@include setPadding(10px, 10px, 10px, 10px);
-	@include setMargin(auto, auto, auto, auto);
+	@include setMargin(auto, auto, auto, 0);
 	@include setBackGround(#fff);
 	@include setFloat(none);
 

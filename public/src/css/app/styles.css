@@ -11,7 +11,7 @@ body {
   margin-top: auto;
   margin-right: auto;
   margin-bottom: auto;
-  margin-left: auto;
+  margin-left: 0;
   background: #fff;
   float: none; }
   .login-container .header {
