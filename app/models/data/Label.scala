@@ -14,14 +14,26 @@ class Label {
   @Id
   @GeneratedValue
   @Column(name = "label_id")
-  val labelId: Integer = 0;
+  val _labelId: Integer = 0;
 
   @Column(name = "name")
-  val name: String = null;
+  var _name: String = null;
 
   @Column(name = "description")
-  val description: String = null;
+  var _description: String = null;
 
   @Column(name = "owner_id")
-  val ownerId: Long = 0;
+  var _ownerId: Long = 0;
+
+  def labelId = _labelId;
+
+  def name = _name;
+  def name_=(value: String): Unit = _name = value
+
+  def description = _description;
+  def description_=(value: String): Unit = _description = value
+
+  def ownerId = _ownerId;
+  def ownerId_=(value: Long): Unit = _ownerId = value
+
 }

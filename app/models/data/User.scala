@@ -55,7 +55,7 @@ class User {
   @Column(name = "date_created")
   var _dateCreated: Timestamp = null;
 
-  
+  def userId = _userId; 
 
   def displayName = _displayName;
   def displayName_=(value: String): Unit = _displayName = value
