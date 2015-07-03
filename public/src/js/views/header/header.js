@@ -1,5 +1,5 @@
-define(['js/views/utils/common-view', 'text!templates/header/header.html'], 
-	function(CommonView, HeaderTemplate){
+define(['js/views/utils/common-view', 'text!templates/header/header.html', "chosen", "jqueryUi", 'js/model/add-task'], 
+	function(CommonView, HeaderTemplate, Chosen, JqueryUi, AddTaskModel){
 	"use strict";
 	
 	var HeaderView = CommonView.extend({
@@ -10,13 +10,14 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html'],
 		},
 		
 		events : {
-			"click .list-icon" : "toggleSidebar",
-//			"click .add-task-icon" : "addTask",
+			"click .list-icon": "toggleSidebar",
+			"click .add-task": "addTask" 
 		},
 		
 		render : function(){
 			var self = this;
 			$(this.el).find(".header").html(HeaderTemplate);
+			$(self.el).find(".datepicker").datepicker();
 		},
 		
 		toggleSidebar: function(){
@@ -25,7 +26,21 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html'],
 		},
 		
 		addTask: function(){
-			alert("tse");
+			var taskModel = new AddTaskModel();
+			taskModel.set({
+				"title": "MArk It",
+				"description" : "description",
+				"startDate": new Date(),
+				"endDate": new Date()
+			});
+			taskModel.save({
+				  success: function(model, response){
+				    console.log('success');
+				  },
+				  error: function(){
+				    console.log('error');
+				  }
+			});
 		}
 	});
 	return HeaderView;

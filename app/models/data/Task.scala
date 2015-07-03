@@ -14,7 +14,7 @@ class Task {
   @Id
   @GeneratedValue
   @Column(name = "task_id")
-  val taskId: Int = 0;
+  var _taskId: Int;
 
   @Column(name = "title")
   val title: String = null;
@@ -37,5 +37,10 @@ class Task {
   @ManyToOne
   @JoinColumn(name = "created_by", insertable = false, updatable = false)
   val createdBy:User = null;
+  
+  
+  def taskId = _taskId; 
+
+  def taskId_= (value:Int):Unit =  _taskId = value  
 
 }

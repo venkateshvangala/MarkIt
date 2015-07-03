@@ -18,27 +18,28 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add Task</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body row" style="border-bottom:1px solid #333">
          <div class="row">
-         	 <div class="span_6 pull-left">
-         	 	<label>Title</label>
-         	 	<label>Description</label>
-         	 	<label>Start Date</label>
-         	 	<label>End Date </label>
-         	 	<label>Status</label>
+         	 <div class="row pull-left">
+         	 	<div class="row"><label>Title:</label></div>
+         	 	<div class="row"><input type="text" name="title" placeholder="Enter Title…"></div>
+				<div class="row"><br/></div>
+         	 	<div class="row"><label>Start Date:</label></div>
+         	 	<div class="row"><input type="text" name="startDate" class="datepicker" placeholder="Enter StartDate" /> </div>
+       	 		<div class="row"><br/></div>
+         	 	<div class="row"><label>End Date:</label></div>
+         	 	<div class="row"><input type="text" name="endDate" class="datepicker" placeholder="Enter End Date" /></div>
+         	 	<div class="row"><br/></div>
+         	 	<div class="row"><label>Description:</label></div>
+         	 	<div class="row"><input type="text" style="height:250px" name="title"></div>
+         	 	<div class="row"><br/></div>
          	 </div>
-         	 <div class="span_6 pull-left">
-         	 	<label>Title</label>
-         	 	<label>Description</label>
-         	 	<label>Start Date</label>
-         	 	<label>End Date </label>
-         	 	<label>Status</label>
-         	 </div>
+         	  
          </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Done</button>
+        <button type="button" style="margin-top: 15px" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" style="margin-top: 15px" class="btn btn-primary add-task">Done</button>
       </div>
     </div>
   </div>

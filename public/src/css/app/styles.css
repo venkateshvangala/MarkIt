@@ -237,4 +237,26 @@ body {
 .active {
   display: block; }
 
+.modal-body input[type="text"] {
+  height: 35px; }
+
+.ui-datepicker {
+  width: 16.5% !important; }
+
+.ui-datepicker-calendar {
+  width: 100%  !important;
+  border-radius: 5px  !important;
+  background-color: #faf6f6 !important; }
+
+.ui-datepicker-prev, .ui-datepicker-next {
+  float: right;
+  padding: 5px;
+  color: #fff; }
+
+.ui-datepicker-title {
+  height: 40px; }
+
+.ui-datepicker-month, .ui-datepicker-year {
+  padding: 5px; }
+
 /*# sourceMappingURL=styles.css.map */
