@@ -1,4 +1,51 @@
-This is your new Play application
-=====================================
+MarkIT we Track IT.....!
 
-This file will be packaged with your application, when using `play dist`.
+Overview :
+
+MarkIt is a web application which can be used for task management. The user can create and delegate them to other users. 
+When a user logs in he/she can view the tasks created by him as well as those assigned to him.
+
+Features:
+-- Create a task
+-- Label a task
+-- Delegate a task
+-- Set start time and end time
+-- Email notification for task assignment
+-- Close a task
+-- Delete a task
+-- Archive a task
+-- Integrate calendar view
+-- Filters based on label, created date, created by, assigned by, assigned to
+-- List and Grid view
+
+Technology stack:
+
+Front-end:
+-- HTML
+-- JAVA SCRIPT
+-- CSS
+-- BACKBONE JS
+-- UNDERSCORE JS
+-- GRUNT JS
+-- NODE JS
+-- SASS CSS
+-- BOOTSTRAP CSS
+-- REQUIRE JS
+
+Back-end:
+-- PLAY FRAMEWORK
+-- EBEAN (ORM)
+-- SCALA
+-- SHIRO AUTHENTICATION & AUTHORIZATION MECHANISM
+
+Database: MySQL
+
+Future Plans:
+
+
+
+
+
+
+
+
