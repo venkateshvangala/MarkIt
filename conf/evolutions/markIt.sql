@@ -4,7 +4,7 @@ CREATE TABLE task (
   description varchar(150) DEFAULT NULL,
   status varchar(45) DEFAULT NULL,
   create_date timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  start_ate timestamp NULL DEFAULT NULL,
+  start_date timestamp NULL DEFAULT NULL,
   end_date timestamp NULL DEFAULT NULL,
   created_by bigint(20) DEFAULT NULL,
   PRIMARY KEY (task_id),
