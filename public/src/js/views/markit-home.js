@@ -49,12 +49,12 @@ function(jQuery, _, Backbone, ListTaskModel, markitHome, notes, AddTaskModel){
 		
 		archiveTask: function(){
 			var self = this;
-			self.updateTask(1);
+			self.updateTask(this, 1);
 		},
 		
 		deleteTask: function(){
 			var self = this;
-			self.updateTask(2);
+			self.updateTask(this, 2);
 		},
 		
 		
@@ -65,12 +65,13 @@ function(jQuery, _, Backbone, ListTaskModel, markitHome, notes, AddTaskModel){
 				var taskId = $(event.currentTarget).attr("data-id");
 				self.task = _.findWhere(self.taskList, {"taskId" : taskId }); 
 				var editModal = $(self.el).find("#myModal").modal("show");
+				
 				$(editModal).find("input[name='title']").val(self.task.title);
 				$(editModal).find("input[name='description']").val(self.task.descrition);
 			})
 		},
 		
-		updateTask: function(status){
+		updateTask: function(event, status){
 			var self = this;
 			status = status ? status : 0;
 			var taskModel = new AddTaskModel();
@@ -78,6 +79,7 @@ function(jQuery, _, Backbone, ListTaskModel, markitHome, notes, AddTaskModel){
 				"taskId": self.task.taskId,
 				"title": $(self.el).find("input[name='title']").val().trim(),
 				"description" : $(self.el).find("input[name='description']").val().trim(),
+				"labelId": $(self.el).find("select").val().trim(),
 				"status": status
 			});
 			$(self.el).find("#myModal").modal("hide");

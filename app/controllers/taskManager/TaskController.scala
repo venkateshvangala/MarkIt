@@ -25,7 +25,7 @@ object TaskController extends Controller{
       var task = new Task();
       task.title_=(requestBody.get.\("title").toString());
       task.description_=(requestBody.get.\("description").toString());
-         
+      
       var id:Int = requestBody.get.\("taskId").toString().replaceAll("\"" , "").toInt; 
       
       if(id != 0){
@@ -35,6 +35,20 @@ object TaskController extends Controller{
          var status:Int = requestBody.get.\("status").toString().replaceAll("\"" , "").toInt; 
          task.status_=(status);
          TaskService.update(task);
+         var labelMap = LabelMapService.findByTaskId(id);
+         if(labelMap == null){
+           labelMap = new LabelMap;
+           labelMap.labelId_=(requestBody.get.\("labelId").toString().replaceAll("\"" , "").toInt) 
+           labelMap.taskId_=(requestBody.get.\("taskId").toString().replaceAll("\"" , "").toInt);
+           labelMap.userId_=(1);
+           LabelMapService.save(labelMap);
+         }
+         else{
+           labelMap.labelId_=(requestBody.get.\("labelId").toString().replaceAll("\"" , "").toInt) 
+           labelMap.taskId_=(requestBody.get.\("taskId").toString().replaceAll("\"" , "").toInt);
+           labelMap.userId_=(1);
+           LabelMapService.update(labelMap);
+         }
       }
       else{
           TaskService.save(task);

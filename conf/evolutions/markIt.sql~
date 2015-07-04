@@ -54,4 +54,10 @@ CREATE TABLE label_map (
   CONSTRAINT fk_label_map_3 FOREIGN KEY (task_id) REFERENCES task (task_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
+
+
+alter table task modify status int(11);
+update task set status = 0;
+
+
 commit;

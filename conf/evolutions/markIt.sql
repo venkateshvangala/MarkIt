@@ -59,5 +59,11 @@ CREATE TABLE label_map (
 alter table task modify status int(11);
 update task set status = 0;
 
+insert into label_master(label_id, name, description, owner_id) values(1, "Personal", "Personal Data", 1);
+insert into label_master(label_id, name, description, owner_id) values(2, "Work", "Work Data", 1);
+insert into label_master(label_id, name, description, owner_id) values(3, "Others", "Other Data", 1);
+
+
+
 
 commit;
