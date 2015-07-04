@@ -1,5 +1,42 @@
 <div class="row">
-	
-	
+	<div class="notes-container">
+			<div class="notes-list grid-view">
+			
+			</div>
+	</div>	
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Task</h4>
+      </div>
+      <div class="modal-body row" style="border-bottom:1px solid #333">
+         <div class="row">
+         	 <div class="row pull-left">
+         	 	<div class="row"><label>Title:</label></div>
+         	 	<div class="row"><input type="text" name="title" placeholder="Enter Title…"></div>
+         	 	<div class="row"><br/></div>
+         	 	<div class="row"><label>Description:</label></div>
+         	 	<div class="row"><input type="text" name="description" style="height:250px" name="title"></div>
+         	 	<div class="row"><br/></div>
+         	 </div>
+         	  
+         </div>
+      </div>
+      <div class="modal-footer row" style="float:none;padding-bottom:0px;">
+      	<div class="span_8 pull-left">
+      		       	<span class="span_2"><a href="javascript:void(0);" style="height:50px;padding:30px" class="span_1 archive-task archive-view-icon pull-left" title="Archive"></a></span>
+      		       	<span class="span_2"><a href="javascript:void(0);" style="height:50px;padding:30px" class="span_1 delete-task  trash-view-icon pull-left" title="Archive"></a></span>
+      	</div>
+      	<div class="span_4 pull-left">
+      		       	<span class="span_2"><button type="button" style="margin-top: 15px" class="pull-right btn btn-primary update-task">Done</button></span>
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>

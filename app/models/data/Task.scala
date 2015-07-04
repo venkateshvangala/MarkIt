@@ -23,7 +23,7 @@ class Task {
   var _description: String = null;
 
   @Column(name = "status")
-  var _status: String = null;
+  var _status: Int = 0;
 
   @Column(name = "create_date")
   var _createDate: Timestamp = null;
@@ -48,18 +48,18 @@ class Task {
   def description_= (value:String):Unit =  _description = value
 
   def status = _status;
-  def status_= (value:String):Unit =  status = value
+  def status_= (value:Int):Unit =  _status = value
   
   def createDate = _createDate;
-  def createDate_= (value: Timestamp):Unit =  createDate = value
+  def createDate_= (value: Timestamp):Unit =  _createDate = value
   
   def startDate = _startDate;
-  def startDate_= (value: Timestamp):Unit =  startDate = value
+  def startDate_= (value: Timestamp):Unit =  _startDate = value
   
   def endDate = _endDate;
-  def endDate_= (value: Timestamp):Unit =  endDate = value
+  def endDate_= (value: Timestamp):Unit =  _endDate = value
   
   def createdBy = _createdBy;
-  def createdBy_= (value: User):Unit =  createdBy = value
+  def createdBy_= (value: User):Unit =  _createdBy = value
    
 }

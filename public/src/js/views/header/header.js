@@ -12,8 +12,8 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html', "chos
 		events : {
 			"click .list-icon": "toggleSidebar",
 			"click .add-task": "addTask",
-			"click .refresh-icon" : "render",
-			"click .list-view-icon" : "listView"
+			"click .refresh-icon" : "renderMain",
+			"click .view-mode" : "listView"
 		},
 		
 		render : function(){
@@ -22,21 +22,37 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html', "chos
 			$(self.el).find(".datepicker").datepicker();
 		},
 		
+		renderMain: function(){
+			location.reload();
+		},
+		
 		toggleSidebar: function(){
 			var self = this;
 			$(self.el).find(".left-navigator").toggleClass("sidebar-toggle");
 		},
 		
-		listView: function(){
+		listView: function(event){
 			var self = this;
-			alert("list")
-			self.render();
+			var currentTarget = $(event.currentTarget); 
+			if($(currentTarget).hasClass("list-view-icon")){
+				$(currentTarget).toggleClass("grid-view-icon");
+				$(currentTarget).toggleClass("list-view-icon");
+				$(self.el).find(".notes-container").find(".note").removeAttr("style");
+			}
+			else{
+				$(currentTarget).addClass("list-view-icon");
+				$(currentTarget).toggleClass("grid-view-icon");
+				$(self.el).find(".notes-container").find(".note").width("70%");
+			}
+			
+			
 		},
 		
 		addTask: function(){
 			var self = this;
 			var taskModel = new AddTaskModel();
 			taskModel.set({
+				"taskId": "0",
 				"title": $("input[name='title']").val().trim(),
 				"description" : $("input[name='description']").val().trim(),
 				"startDate": $("input[name='startDate']").val().trim(),
@@ -51,6 +67,10 @@ define(['js/views/utils/common-view', 'text!templates/header/header.html', "chos
 				    console.log('error');
 				  }
 			});
+			
+			setTimeout(function(){
+				self.renderMain();
+			}, 1000)
 		}
 	});
 	return HeaderView;

@@ -112,6 +112,7 @@ body{
   height: 100%;
 }
 
+
 .list-view-icon{
   display: inline-block;
   background: url("/assets/src/img/app/list-view.png") center center no-repeat transparent;
@@ -119,6 +120,33 @@ body{
   vertical-align: middle;
   height: 100%;
 }
+
+
+.archive-view-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/archive.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.trash-view-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/trash.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
+
+.grid-view-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/grid.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
 
 .notes-icon{
   display: inline-block;
@@ -340,3 +368,32 @@ body{
 	padding: 5px;
 }
 
+.notes-container{
+	  width: 90%;
+  float: left;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+  .note{
+  	width: 23.5%;
+  float: left;
+  border: 1px solid #eee;
+  padding: 1em;
+  border-radius: 5px;
+  margin: 5px;
+  margin-right: 12px !important;
+  margin-bottom: 12px !important;
+  
+  .note-title{
+  		h3{
+  			border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  		}
+  }
+  }
+}
+
+.inactive{
+	display: none;
+}

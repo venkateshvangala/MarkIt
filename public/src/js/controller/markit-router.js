@@ -19,21 +19,21 @@ define(['jquery', 'underscore', 'backbone', "js/views/common/viewCreate"], funct
 		renderHome : function(){
 			require(["js/views/markit-home"], function(MarkItHomeView){
 				var appView = ViewCreate.create({}, 'MarkItHomeView', MarkItHomeView);
-				appView.render();
+				appView.render(0);
 			});
 		},
 		
 		renderArchive : function(){
 			require(["js/views/markit-home"], function(MarkItHomeView){
 				var appView = ViewCreate.create({}, 'MarkItHomeView', MarkItHomeView);
-				appView.render();
+				appView.render(1);
 			});
 		},
 		
 		renderTrash : function(){
 			require(["js/views/markit-home"], function(MarkItHomeView){
 				var appView = ViewCreate.create({}, 'MarkItHomeView', MarkItHomeView);
-				appView.render();
+				appView.render(2);
 			});
 		},
 		

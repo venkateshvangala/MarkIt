@@ -12,6 +12,7 @@ define(['js/views/utils/common-view', 'text!templates/sidebar/sidebar.html'],
 		events : {
 			"click li a" : "toggleActiveClass"
 		},
+
 		
 		render : function(){
 			var self = this;

@@ -11,7 +11,7 @@ define(['js/views/utils/common-view', 'text!templates/footer/footer.html'],
 		
 		render: function(){
 			var self = this;
-			$(this.el).html(FooterTemplate);
+//			$(this.el).html(FooterTemplate);
 		}
 	});
 	return FooterView;

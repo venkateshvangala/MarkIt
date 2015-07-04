@@ -10,6 +10,8 @@ POST 	/login							controllers.login.Login.authenticate
 # Task Management
 POST   /addTask							controllers.taskManager.TaskController.addTask
 GET   /listTask							controllers.taskManager.TaskController.listTask
+GET   /archiveTasks						controllers.taskManager.TaskController.archiveTaskList
+GET   /deltedTasks						controllers.taskManager.TaskController.deltedTaskList
 
 
 # Map static resources from the /public folder to the /assets URL path
