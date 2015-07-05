@@ -104,4 +104,31 @@ object TaskController extends Controller{
       Ok(tasks);
   }
   
+  def isLabelExist(id2 : Int, labelId: Int): Boolean ={
+    var isExist = false;
+    var labelSize = LabelMapService.all().size
+     for (labelMap <- LabelMapService.all()){
+       if(labelMap.taskId == id2 && labelMap.labelId == labelId) {
+         isExist = true;
+       }
+     }
+    isExist;
+  }
+  
+  def labelTaskList(labelId:String) = Action { 
+      val taskList: List[Task] = TaskService.all();
+      var tasks = "";
+      for (task <- taskList){
+        if(this.isLabelExist(task.taskId.toInt, labelId.toInt)){
+            val json = Json.obj(
+            "title" -> task.title,
+            "descrition" -> task._description,
+            "taskId" -> task.taskId.toString()
+          );
+          tasks += json + "|";
+        }
+      }
+      Ok(tasks);
+  }
+  
 }

@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', "js/views/common/viewCreate"], function(jQuery, _, Backbone, ViewCreate){
+define(['jquery', 'underscore', 'backbone', "js/views/common/viewCreate", 'js/model/get-label-task'], function(jQuery, _, Backbone, ViewCreate, GetLabelTaskModel){
 	var self, MarkItRouter = Backbone.Router.extend({
 
 		initialize : function(options){
@@ -40,14 +40,14 @@ define(['jquery', 'underscore', 'backbone', "js/views/common/viewCreate"], funct
 		renderPersonal : function(){
 			require(["js/views/markit-home"], function(MarkItHomeView){
 				var appView = ViewCreate.create({}, 'MarkItHomeView', MarkItHomeView);
-				appView.render();
+				appView.render(3);
 			});
 		},
 		
 		renderWork : function(){
 			require(["js/views/markit-home"], function(MarkItHomeView){
 				var appView = ViewCreate.create({}, 'MarkItHomeView', MarkItHomeView);
-				appView.render();
+				appView.render(4);
 			});
 		},
 		

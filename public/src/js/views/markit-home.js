@@ -28,7 +28,13 @@ function(jQuery, _, Backbone, ListTaskModel, markitHome, notes, AddTaskModel){
 			}
 			else if(status == 2){
 				url = "/deltedTasks"
+			}else if(status == 3){
+				url = "/labelTaskList/1";
+			}else if(status == 4){
+				url = "/labelTaskList/2";
 			}
+			
+			
 			$(self.el).parent().find(".left-navigator").removeClass("sidebar-toggle");
 			
 			$.ajax({
