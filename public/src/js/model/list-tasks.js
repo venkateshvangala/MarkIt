@@ -1,4 +1,4 @@
-define(['jquery', 'backbone'], function($, Backbone) {
+define(['jquery', 'backbone'], function(jQuery, Backbone) {
     var ListTaskModel = Backbone.Model.extend({
 		url: "/listTask",
         initialize: function() {

@@ -1,5 +1,5 @@
-define(['js/views/utils/common-view', 'text!templates/footer/footer.html'], 
-	function(CommonView, FooterTemplate){
+define(["jquery", 'js/views/utils/common-view', 'text!templates/footer/footer.html'], 
+	function(jQuery, CommonView, FooterTemplate){
     "use strict";
 	
 	var FooterView = CommonView.extend({

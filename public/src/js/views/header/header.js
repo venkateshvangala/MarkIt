@@ -1,5 +1,5 @@
-define(['js/views/utils/common-view', 'text!templates/header/header.html', "chosen", "jqueryUi", 'js/model/add-task'], 
-	function(CommonView, HeaderTemplate, Chosen, JqueryUi, AddTaskModel){
+define(["jquery", 'js/views/utils/common-view', 'text!templates/header/header.html', "chosen", "jqueryUi", 'js/model/add-task'], 
+	function(jQuery, CommonView, HeaderTemplate, Chosen, JqueryUi, AddTaskModel){
 	"use strict";
 	
 	var HeaderView = CommonView.extend({

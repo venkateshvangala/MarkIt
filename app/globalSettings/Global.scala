@@ -4,10 +4,8 @@ import play.api._
 import play.api.mvc._
 import play.api.mvc.Results._
 import scala.concurrent.Future
-import security.AuthRealm
-import security.AuthSecurityManager
-import org.apache.shiro.mgt.DefaultSubjectDAO
-import org.apache.shiro.mgt.DefaultSessionStorageEvaluator
+import security.{AuthRealm, AuthSecurityManager}
+import org.apache.shiro.mgt.{DefaultSubjectDAO, DefaultSessionStorageEvaluator}
 
 /**
  * @author venkateshv

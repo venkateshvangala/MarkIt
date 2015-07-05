@@ -8,8 +8,6 @@ import play.api.data.Forms._
 import play.api.Logger
 import models.services.UserService
 import controllers.Application
-import views.html._
-
 
 /**
  * @author venkateshv
@@ -27,7 +25,6 @@ object Login extends Controller {
   );
   
   def index = Action { implicit request =>
-        Logger.info("Login Index Method")
         Ok(login(loginForm))
   }
   
@@ -37,7 +34,7 @@ object Login extends Controller {
       formWithErrors => { BadRequest(login(formWithErrors)) },
       success => {
         emailId = success._1;
-        Logger.info("Success...." + success + "...")
+        Logger.info("Logged In User..." + success._1)
       })
     Ok(main.render()).withSession("email" -> emailId);
   }

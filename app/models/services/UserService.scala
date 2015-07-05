@@ -22,9 +22,8 @@ object UserService extends GenericService(classOf[User]) {
   }
 
   def authenticate(email: String, password: String): Boolean = {
-    Logger.info("Logged in User...." + email);
     val token = new UsernamePasswordToken(email, password);
-    token.setRememberMe(false);
+    token.setRememberMe(true);
     val currentUser = SecurityUtils.getSubject;
     try {
       currentUser.login(token);

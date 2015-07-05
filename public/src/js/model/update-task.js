@@ -1,4 +1,4 @@
-define(['jquery', 'backbone'], function($, Backbone) {
+define(['jquery', 'backbone'], function(jQuery, Backbone) {
     var self,
     UpdateTaskModel = Backbone.Model.extend({
 		idAttribute: "taskId",

@@ -1,4 +1,4 @@
-define(['jquery', 'backbone'], function($, Backbone) {
+define(['jquery', 'backbone'], function(jQuery, Backbone) {
     var GetLabelTaskModel = Backbone.Model.extend({
 		url: "/labelTaskList/",
         initialize: function() {

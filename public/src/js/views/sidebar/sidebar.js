@@ -1,5 +1,5 @@
-define(['js/views/utils/common-view', 'text!templates/sidebar/sidebar.html'], 
-	function(CommonView, SidebarTemplate){
+define(["jquery", 'js/views/utils/common-view', 'text!templates/sidebar/sidebar.html'], 
+	function(jQuery, CommonView, SidebarTemplate){
 	"use strict";
 	
 	var SidebarView = CommonView.extend({
