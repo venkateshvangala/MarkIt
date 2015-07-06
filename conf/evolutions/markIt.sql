@@ -1,3 +1,10 @@
+set foreign_key_checks =  0;
+drop table if exists task;
+drop table if exists user_accessibility;
+drop table if exists label_master;
+drop table if exists label_map;
+set foreign_key_checks =  1;
+
 CREATE TABLE task (
   task_id int(11) NOT NULL AUTO_INCREMENT,
   title varchar(60) NOT NULL,
@@ -58,12 +65,6 @@ CREATE TABLE label_map (
 
 alter table task modify status int(11);
 update task set status = 0;
-
-insert into label_master(label_id, name, description, owner_id) values(1, "Personal", "Personal Data", 1);
-insert into label_master(label_id, name, description, owner_id) values(2, "Work", "Work Data", 1);
-insert into label_master(label_id, name, description, owner_id) values(3, "Others", "Other Data", 1);
-
-
 
 
 commit;
