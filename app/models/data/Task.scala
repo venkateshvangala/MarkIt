@@ -34,9 +34,10 @@ class Task {
   @Column(name = "end_date")
   var _endDate: Timestamp = null;
 
-  @ManyToOne
-  @JoinColumn(name = "created_by", insertable = false, updatable = false)
-  var _createdBy:User = null;
+   @Column(name = "created_by")
+  var _createdBy:Long = 0;
+  
+ 
   
   
   def taskId = _taskId; 
@@ -60,6 +61,6 @@ class Task {
   def endDate_= (value: Timestamp):Unit =  _endDate = value
   
   def createdBy = _createdBy;
-  def createdBy_= (value: User):Unit =  _createdBy = value
+  def createdBy_=(value: Long): Unit = _createdBy = value
    
 }
