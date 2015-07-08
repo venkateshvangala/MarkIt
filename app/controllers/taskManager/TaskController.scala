@@ -47,7 +47,7 @@ object TaskController extends Controller {
         LabelMapService.update(labelMap);
       }
     } else {
-      task.createdBy_=(1.toLong);
+      task.createdBy_=(userId.toLong);
       TaskService.save(task);
     }
     Ok(JsObject(List("success" -> JsString("success"), "error" -> JsString("false"))));
