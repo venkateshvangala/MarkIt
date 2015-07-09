@@ -32,4 +32,8 @@ object UserService extends GenericService(classOf[User]) {
       case e: AuthenticationException => false;
     }
   }
+  
+  def logout() {
+    SecurityUtils.getSubject.logout()
+  }
 }

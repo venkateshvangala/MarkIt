@@ -28,6 +28,11 @@ object Login extends Controller {
         Ok(login(loginForm))
   }
   
+  def logout = Action { implicit request =>
+      UserService.logout();
+      Ok(login(loginForm))
+    }
+  
   def authenticate = Action { implicit request => 
     var emailId: String = "";
     val result = loginForm.bindFromRequest.fold(

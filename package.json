@@ -1,16 +1,9 @@
 {
-  "name": "reporting-manager",
-  "version": "0.1.0",
+  "name": "MarkIt",
+  "version": "0.0.1",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-watch": "^0.6.1"
-  },
-  "description": "This is your new Play application",
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "MarkIT Team ",
-  "license": "ISC"
+  }
 }

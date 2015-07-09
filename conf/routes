@@ -5,6 +5,7 @@
 # Login page
 GET 	/ 								controllers.login.Login.index
 POST 	/login							controllers.login.Login.authenticate
+GET 	/logout							controllers.login.Login.logout
 
 
 # Task Management

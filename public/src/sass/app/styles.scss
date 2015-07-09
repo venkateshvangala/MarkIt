@@ -104,6 +104,14 @@ body{
   height: 100%;
 }
 
+.logout-icon{
+  display: inline-block;
+  background: url("/assets/src/img/app/logout.png") center center no-repeat transparent;
+  cursor: pointer;
+  vertical-align: middle;
+  height: 100%;
+}
+
 .list-icon{
   display: inline-block;
   background: url("/assets/src/img/app/list.png") center center no-repeat transparent;
